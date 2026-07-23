@@ -1,0 +1,83 @@
+:root {
+  /* Colours — dark mode default */
+  --bg: #080a0f;
+  --bg-panel: #0f1218;
+  --bg-elevated: #161b24;
+  --bg-hover: #1c2330;
+  --border: #1e2535;
+  --border-subtle: #151a25;
+
+  --text-primary: #e8e6e0;
+  --text-secondary: #7a8094;
+  --text-muted: #454e63;
+
+  --signal: #4fd1e8;
+  --signal-glow: rgba(79, 209, 232, 0.18);
+  --signal-dim: #1d5f6e;
+  --thinking: #9b8cff;
+  --thinking-glow: rgba(155, 140, 255, 0.18);
+  --speaking: #f0a653;
+  --speaking-glow: rgba(240, 166, 83, 0.18);
+  --error: #e8694a;
+  --error-glow: rgba(232, 105, 74, 0.15);
+  --success: #4ecb71;
+
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --radius: 12px;
+  --radius-sm: 7px;
+  --shadow: 0 4px 24px rgba(0,0,0,0.4);
+}
+
+[data-theme="light"] {
+  --bg: #f0f2f5;
+  --bg-panel: #ffffff;
+  --bg-elevated: #f7f8fa;
+  --bg-hover: #eef0f4;
+  --border: #dde1ea;
+  --border-subtle: #e8eaf0;
+
+  --text-primary: #0f1420;
+  --text-secondary: #5a6275;
+  --text-muted: #9aa0b0;
+
+  --signal-glow: rgba(79, 209, 232, 0.12);
+  --thinking-glow: rgba(155, 140, 255, 0.12);
+  --speaking-glow: rgba(240, 166, 83, 0.12);
+  --error-glow: rgba(232, 105, 74, 0.10);
+
+  --shadow: 0 4px 24px rgba(0,0,0,0.1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; }
+
+body {
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  min-height: 100vh;
+  transition: background 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+}
+
+button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+button:disabled { cursor: not-allowed; opacity: 0.45; }
+input, textarea { font-family: inherit; }
+a { color: var(--signal); text-decoration: none; }
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 99px; }
+
+::selection { background: var(--signal-glow); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
